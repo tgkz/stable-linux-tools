@@ -11,8 +11,4 @@ cd $DIR
 ltsver=v$1    # "v" is added by me
 ver=`git tag -l "$ltsver.*"|sort --version-sort` # get tag names
 
-for v in $ver     # for each tagged version ..
-do
-   echo -n $v " "   # print a tagged version 
-   set `git log -1 --pretty=format:%ai $v`; echo $1  # print release date
-done
+rdatecore.sh $ver

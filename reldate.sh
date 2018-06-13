@@ -7,11 +7,4 @@
 # set stable-linux git repo into $DIR as below
 DIR=$HOME/Projects/linux/linuxCI/src/gitrepo/linux-stable
 cd $DIR
-ver=$*
-for i in $ver
-do
-   v=v$i   # adding "v" for tag name in the repo
-   echo -n $v " "
-   set `git log -1 --pretty=format:%ai $v`; echo $1
-done
-
+rdatecore.sh $*
