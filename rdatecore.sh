@@ -7,7 +7,7 @@
 #  this will show the release date for specified release tag
 #  Note: Currend directory must be a git repo
 
-line=""
+line='no'
 if [ $1 = '-l' ]; then
   line='yes'
   shift
