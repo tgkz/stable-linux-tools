@@ -8,7 +8,7 @@ VER=4.17
 echo "Running allreldate.sh"
 ./allreldate.sh  >result/allreldate.txt
 
-echo "Running stable-commitcoun.sh"
+echo "Running stable-commitcount.sh"
 ./stable-commitcount.sh >result/stable-commitcount-out.txt
 
 echo "Running stable-reldate.sh"
