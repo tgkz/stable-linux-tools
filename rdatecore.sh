@@ -27,7 +27,7 @@ do
    if [ $line = 'yes' ]; then 
        echo -ne '\t'
        gitlinecount.sh . $v 
-   else echo "else"  # print /n 
+   else echo # print /n 
    fi
 done
 
