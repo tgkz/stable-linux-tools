@@ -10,5 +10,4 @@ cd $DIR
 
 ltsver=v$1    # "v" is added by me
 ver=`git tag -l "$ltsver.*"|sort --version-sort` # get tag names
-
 rdatecore.sh $ver
