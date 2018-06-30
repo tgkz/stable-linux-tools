@@ -13,9 +13,7 @@ if [ $1 = '-l' ]; then
   shift
 fi
 
-# set stable-linux git repo into $DIR as below
-DIR=$HOME/Projects/linux/linuxCI/src/gitrepo/linux-stable
-cd $DIR
+# note: this script is run on the git directory 
 ver=$*
 for i in $ver
 do
