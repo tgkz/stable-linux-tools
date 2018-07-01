@@ -1,7 +1,7 @@
 #!/bin/bash
 # print release date (this is core portion)
-# usage [-l] rdatecre versions
-#    ex. rdatecre 4.10 4.11.2 
+# usage [-l] rdatecore versions
+#    ex. rdatecore 4.10 4.11.2 
 #     or rdatecore v4.10 v4.11.2
 #     -l : print # of lines and files by using gitlinecount
 #  this will show the release date for specified release tag
@@ -18,7 +18,7 @@ ver=$*
 for i in $ver
 do
    if [ ${i::1} = 'v' ]; then v=$i  # 'v' was specified
-   else v=v$i   # adding "v" for tag name in the repo
+   else v=v$i   # add "v" for tag name
    fi
    echo -n $v " "
    set `git log -1 --pretty=format:%ai $v`; echo -n $1
