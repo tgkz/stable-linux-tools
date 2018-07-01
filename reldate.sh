@@ -1,10 +1,23 @@
 #!/bin/sh
-# print release date for specified version in stable-tree
-# usage reldate versions
-# ex. reldate 4.10 4.11.2 
-#  this will show the release date for specified release tag
+# usage reldate [-l] [version-names]
+#   -l : count and print # of lines and files for specific version[s]
+#         note: if multiple version specified, you need to wait long
+#   version-names: tag in the repo can be specified
+#                  reqular expression can be used: ex. v4.1? or v4.1??  
+#  if no version-names, all the version will be used v2.6.12 to latest
 
-# set stable-linux git repo into $DIR as below
+line=''
+if [ $# -ne 0 ]; then
+  if [ $1 = '-l' ]; then 
+     line='-l'
+     shift
+  fi
+  parm="$*"
+else 
+  parm="v2.6.1[2-9] v2.6.[2-9]? v[0-9].? v[0-9].??"
+fi
+# set stable-linux git repo as below
 DIR=$HOME/Projects/linux/linuxCI/src/gitrepo/linux-stable
 cd $DIR
-rdatecore.sh $*
+ver=`git tag -l $parm |sort --version-sort`
+rdatecore.sh $line $ver
