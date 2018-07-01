@@ -19,5 +19,6 @@ fi
 # set stable-linux git repo as below
 DIR=$HOME/Projects/linux/linuxCI/src/gitrepo/linux-stable
 cd $DIR
+#ver=$parm
 ver=`git tag -l $parm |sort --version-sort`
 rdatecore.sh $line $ver
