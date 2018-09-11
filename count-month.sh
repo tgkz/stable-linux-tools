@@ -1,17 +1,20 @@
 #!/bin/sh
 # Usage: count-month.sh LTSversion
 #  example: count-mount.sh 4.14
-# print how many releases happed in every month
-# We invoke stable-reldate.sh so you need to set PATH
+# print how many releases happend in every month
+# We need to set PATH because We invoke stable-reldate.sh and listmonth
 #
-# Here is some example output 
-#
-# $ sh count-mounth.sh 
-# 2017-01  6  v4.9.1 .. v4.9.6
-# 2017-02  7  v4.9.7 .. v4.9.13
-# 2017-03  7  v4.9.14 .. v4.9.20
-# 2017-04  5  v4.9.21 .. v4.9.25
-# 2017-05  5  v4.9.26 .. v4.9.30
+# Below is output in some case; 
+# $ PATH=$PATH:`pwd`; ./count-month.sh  4.14
+# 2017-11  3  v4.14.1 .. v4.14.3
+# 2017-12  7  v4.14.4 .. v4.14.10
+# 2018-01  6  v4.14.11 .. v4.14.16
+# 2018-02  7  v4.14.17 .. v4.14.23
+# 2018-03  9  v4.14.24 .. v4.14.32
+# 2018-04  6  v4.14.33 .. v4.14.38
+# 2018-05  9  v4.14.39 .. v4.14.47
+# 2018-06  4  v4.14.48 .. v4.14.51
+
 FILE=/tmp/count-mount$$
 stable-reldate.sh $1 >$FILE
 
